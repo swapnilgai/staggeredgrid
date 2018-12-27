@@ -23,6 +23,7 @@ buildscript {
         rx_java_version = "2.1.0"
         rx_android_version = "2.0.1"
         room_version = "1.1.0"
+        glideVersion = '4.8.0'
     }
 
 

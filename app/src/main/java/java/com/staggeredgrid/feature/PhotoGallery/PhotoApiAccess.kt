@@ -1,4 +1,4 @@
-package java.com.staggeredgrid.feature
+package java.com.staggeredgrid.feature.PhotoGallery
 
 import android.content.Context
 import io.reactivex.Observable
