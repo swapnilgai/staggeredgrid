@@ -64,7 +64,6 @@ class PhotoGalleryViewModel @Inject constructor(private val photoApiAccess: Phot
   }
 
   private fun renderLoading() {
-    list.clear()
     error.set(false)
     loading.set(true)
   }

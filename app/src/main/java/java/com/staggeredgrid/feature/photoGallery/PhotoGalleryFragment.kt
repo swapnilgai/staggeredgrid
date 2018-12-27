@@ -41,6 +41,7 @@ class PhotoGalleryFragment : Fragment(), GalleryItemNavigator {
     binding.rvMain.layoutManager =
         StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
     binding.viewModel = photoGalleryViewModel
+    binding.swipeRefreshLayout.setOnRefreshListener { photoGalleryViewModel?.getSearchResult() }
     return binding.root
   }
 
