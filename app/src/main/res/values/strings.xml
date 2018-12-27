@@ -3,4 +3,7 @@
   <string name="base_url">http://jsonplaceholder.typicode.com/</string>
   <string name="server_error">Server_Error</string>
   <string name="empty_list_error">Empty list error</string>
+
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

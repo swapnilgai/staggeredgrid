@@ -4,6 +4,7 @@ package java.com.staggeredgrid.util
 import android.view.View
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import java.com.staggeredgrid.R
 
@@ -22,11 +23,20 @@ object Binder {
   }
 
   @JvmStatic
-  @BindingAdapter("set_loading")
-  fun setLoading(view: View, isLoading: Boolean) {
+  @BindingAdapter("setError")
+  fun setError(view: View, isLoading: Boolean) {
     if (isLoading)
       view.visibility = View.VISIBLE
     else
       view.visibility = View.GONE
+  }
+
+  @JvmStatic
+  @BindingAdapter("setLoading")
+  fun setLoading(view: SwipeRefreshLayout, isLoading: Boolean) {
+    if (isLoading)
+      view.isRefreshing = true
+    else
+      view.isRefreshing = false
   }
 }

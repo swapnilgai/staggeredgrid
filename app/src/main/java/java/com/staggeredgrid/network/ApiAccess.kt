@@ -6,6 +6,6 @@ import java.com.staggeredgrid.model.PhotoData
 
 
 interface ApiAccess {
-  @GET("dailymenu")
+  @GET("photos")
   fun getPhotoList(): Single<List<PhotoData?>?>
 }

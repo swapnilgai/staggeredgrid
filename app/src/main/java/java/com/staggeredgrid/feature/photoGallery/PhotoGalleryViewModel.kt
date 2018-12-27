@@ -1,4 +1,4 @@
-package java.com.staggeredgrid.feature.PhotoGallery
+package java.com.staggeredgrid.feature.photoGallery
 
 import androidx.databinding.ObservableArrayList
 import androidx.databinding.ObservableBoolean
@@ -24,21 +24,22 @@ class PhotoGalleryViewModel @Inject constructor(private val photoApiAccess: Phot
 
   companion object {
     private const val DEBOUNCE_INTERVAL: Long = 200
+    private const val DUMMY_TRIGGER: String = ""
   }
 
   init {
     intentReceiver
       .debounce(DEBOUNCE_INTERVAL, MILLISECONDS)
       .observeOn(Schedulers.io())
-      .switchMap { photoApiAccess.getSearchResult(it) }
+      .switchMap { photoApiAccess.getSearchResult() }
       .distinctUntilChanged()
       .observeOn(AndroidSchedulers.mainThread())
       .subscribe { t: GetPhotoResultState -> handelResponse(t) }
       .let { compositeDisposable.add(it) }
   }
 
-  fun getSearchResult(input: String) {
-    intentReceiver.onNext(input)
+  fun getSearchResult() {
+    intentReceiver.onNext(DUMMY_TRIGGER)
   }
 
   private fun handelResponse(getPhotoResultState: GetPhotoResultState) {
@@ -63,7 +64,6 @@ class PhotoGalleryViewModel @Inject constructor(private val photoApiAccess: Phot
   }
 
   private fun renderLoading() {
-    list.clear()
     error.set(false)
     loading.set(true)
   }

@@ -1,4 +1,4 @@
-package java.com.staggeredgrid.feature.PhotoGallery
+package java.com.staggeredgrid.feature.photoGallery
 
 import android.content.Context
 import io.reactivex.Observable
@@ -12,13 +12,11 @@ class PhotoApiAccess @Inject constructor(
   private val apiAccess: ApiAccess,
   private val context: Context
 ) {
-
-
   /**
    * Function get list of photo
    * @return Observable<GetPhotoResultState> and observable which describes state for
    */
-  fun getSearchResult(input: String): Observable<GetPhotoResultState> {
+  fun getSearchResult(): Observable<GetPhotoResultState> {
     return apiAccess.getPhotoList().flatMap { body ->
       if (body == null)
         Single.just(GetPhotoResultState.Error(Throwable(context.getString(R.string.empty_list_error))))
