@@ -85,6 +85,8 @@ dependencies {
   implementation "android.arch.persistence.room:runtime:$room_version"
   implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
   implementation 'androidx.legacy:legacy-support-v4:1.0.0-alpha1'
+  implementation 'androidx.appcompat:appcompat:1.0.0-alpha1'
+  implementation 'com.google.android.material:material:1.0.0-alpha1'
   kapt "android.arch.persistence.room:compiler:$room_version"
   kapt "android.arch.lifecycle:compiler:$android_arch_version"
   implementation "android.arch.persistence.room:rxjava2:$room_version"

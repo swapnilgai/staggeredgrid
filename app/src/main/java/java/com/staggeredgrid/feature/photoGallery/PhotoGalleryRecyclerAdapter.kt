@@ -33,7 +33,7 @@ class PhotoGalleryRecyclerAdapter(private val galleryItemNavigator: GalleryItemN
         }
       }
       holder.binding.item = getItem(position)
-      //holder.binding.navigator = navigator
+      holder.binding.navigator = navigator
     }
   }
 
