@@ -3,8 +3,13 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_height="match_parent"
   android:layout_width="match_parent"
-  tools:context=".MainActivity"
+  tools:context=".feature.photoGallery.PhotoGalleryActivity"
   >
 
+  <FrameLayout
+    android:id="@+id/container"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
