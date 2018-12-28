@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import dagger.android.support.AndroidSupportInjection
 import java.com.staggeredgrid.databinding.PhotoGalleryDb
 import java.com.staggeredgrid.di.ViewModelFactory
-import java.com.staggeredgrid.feature.photoDetailPage.PhotoDetailActivity
+import java.com.staggeredgrid.feature.photoDetailPage.DetailActivity
 import java.com.staggeredgrid.model.PhotoData
 import java.com.staggeredgrid.util.SpacesItemDecoration
 import javax.inject.Inject
@@ -27,7 +27,7 @@ class PhotoGalleryFragment : Fragment(), GalleryItemNavigator {
   lateinit var viewModelFactory: ViewModelFactory
 
   override fun onClick(photoData: PhotoData) {
-    val intent = Intent(context, PhotoDetailActivity::class.java)
+    val intent = Intent(context, DetailActivity::class.java)
     intent.putExtra("EXTRA_SESSION_ID", photoData)
     startActivity(intent)
   }
